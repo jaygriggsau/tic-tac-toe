@@ -5,7 +5,7 @@
 # Project Name
 The briefest description of my cool project and why you should all use it.
 
-## :computer: [Click here](#) to see my live project!
+## :computer: [Click here](https://jaygriggsau.github.io/tic-tac-toe/) to see my live project!
 
 ## Algo
 For our Tic-Tac-Toe JavaScript game, we'll only need three files. 
