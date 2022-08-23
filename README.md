@@ -12,27 +12,22 @@ For our Tic-Tac-Toe JavaScript game, we'll only need three files.
 
 In index.html, we'll assign classes to all the different parts of the game. In style.css, we'll take care of the game's styling. And in script.js, we'll write the actual code for the game.
 
-The game will start with the x character, so that makes x the first player. 
+I know what I want to do.
 
-Create HTML Boilerplate
+Create a 3x3 grid using sections
 
-add 9 sections to create the board and give them a class
+When a player clicks a section it draws an X or O depending on the players turn.
 
-add other UI like player turn, winning/losing/draw message
+It adds that posistion to an array for each player turn. posistions are 0-8 
+Example [6,7,0]
 
-Create the game logic
+It should check the current players array to see if its a winning array combonation.
 
-when a player clicks on a section, it should add X or O depending on the player.
+IF a player gets a winning array combo it should display that they won. 
 
-player click location will be stored in an array and be between 0-8
+if they lose it should say they lose
 
-create a varible to hold x and o 
-
-create an array that will store winnng combonations
-
-use this to check if game has been won or not by checking against current game play
-
-Display win/lose/draw 
+if its a draw it should say its a draw.
 
 ## :page_facing_up: About
 - How to use my awesome project.
