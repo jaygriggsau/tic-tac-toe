@@ -22,6 +22,10 @@ add other UI like player turn, winning/losing/draw message
 
 Create the game logic
 
+when a player clicks on a section, it should add X or O depending on the player.
+
+player click location will be stored in an array and be between 0-8
+
 create a varible to hold x and o 
 
 create an array that will store winnng combonations
