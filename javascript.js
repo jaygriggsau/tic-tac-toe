@@ -19,57 +19,52 @@ let player2 = {
 }
 
 
-function compareArrays() {
-    i=0;
-    while ( i < playerTurn.placement[i]){ // Loops through as many items as in the player.placement array.
-        console.log(playerTurn.placement);
-        i++
+//// Winning Conditions //works when player1.placement is set before the addeventlistner
+function checkWinConditions(){ 
+    if (player1.placement.includes(winningArrays[0][0] && winningArrays[0][1] && winningArrays[0][2])){
+        console.log("you win")
+    } else if (player1.placement.includes(winningArrays[1][0] && winningArrays[1][1] && winningArrays[1][2])){
+        console.log("you win")
+    } else if (player1.placement.includes(winningArrays[2][0] && winningArrays[2][1] && winningArrays[2][2])){
+        console.log("you win")
+    } else if (player1.placement.includes(winningArrays[3][0] && winningArrays[3][1] && winningArrays[3][2])){
+        console.log("you win")
+    } else if (player1.placement.includes(winningArrays[4][0] && winningArrays[4][1] && winningArrays[4][2])){
+        console.log("you win")
+    } else if (player1.placement.includes(winningArrays[5][0] && winningArrays[5][1] && winningArrays[5][2])){
+        console.log("you win")
+    } else if (player1.placement.includes(winningArrays[6][0] && winningArrays[6][1] && winningArrays[6][2])){
+        console.log("you win")
+    } else if (player1.placement.includes(winningArrays[7][0] && winningArrays[7][1] && winningArrays[7][2])){
+        console.log("you win")
+    } else {
+        console.log("Not Yet");
+
     }
+
 }
 
 
-
-// function endOfGame(playerArray){
-//     for ( i=0; i<winningArrays.length; i++){ //works when hard coding the includes statement
-//         if (winningArrays[i].includes(playerArray[0]) && winningArrays[i].includes(playerArray[1]) && winningArrays[i].includes(playerArray[2])){
-          
-//         } else {
-//             break;
-//         }
-//     }
-// }
 
 
 
 
 //Clicking and getting value and taking turns
 gridNumber.addEventListener('click', function(event){
-    console.log(event.target.innerHTML);
     if (player1.isTurn === true){
-        player1.placement.push(event.target.innerHTML);
+        player1.placement.push(event.target.innerHTML); // is pushing correctly
         player1.turnNumber++
         player1.isTurn = false;
         player2.isTurn = true;
-
-        // temp code
-        i=0;
-        while ( i < player1.placement.length){ // Loops through as many items as in the player.placement array.
-            console.log(player1.placement);
-            i++
-        }
-        //*********** */
+        checkWinConditions(); // Throwing error, 
         
     } else if (player2.isTurn === true) {
         player2.placement.push(event.target.innerHTML);
         player2.turnNumber++
         player2.isTurn = false;
         player1.isTurn = true;
-
-        i=0;
-        while ( i < player2.placement.length){ // Loops through as many items as in the player.placement array.
-            console.log(player2.placement);
-            i++
-        }
+        checkWinConditions();
+        
     }
 })
 
