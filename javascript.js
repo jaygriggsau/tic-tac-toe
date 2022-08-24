@@ -1,7 +1,7 @@
 console.log("Checking Link");
 var gridNumber = document.querySelector('.gridbox');
-let winningArrays = [[0,1,2],[3,4,5],[6,7,8],[0,4,8],[2,4,6],[1,4,7]];
-console.log(winningArrays.length)
+let winningArrays = [[0,1,2],[3,4,5],[6,7,8],[0,4,8],[2,4,6],[1,4,7],[0,3,6],[2,5,8]];
+
 
 let player1 = {
     name: "Player One",
@@ -18,20 +18,27 @@ let player2 = {
     placement : []
 }
 
-function compareArrays(playerArray){
-    for ( i=0; i<winningArrays.length; i++){ //curently hard coding placements
-        if (winningArrays[i].includes(playerArray[0]) && winningArrays[[i]].includes(playerArray[1]) && winningArrays[i].includes(playerArray[2])){
-          console.log("win");
-        }
+
+function compareArrays() {
+    i=0;
+    while ( i < playerTurn.placement[i]){ // Loops through as many items as in the player.placement array.
+        console.log(playerTurn.placement);
+        i++
     }
 }
-// function compareArrays(playerArray){
-//     for ( i=0; i<winningArrays.length; i++){ //curently hard coding placements
-//         if (winningArrays[i].includes(playerArray.placement[0]) && winningArrays[playerArray.placement[1]].includes(playerArray.placement[2]) && winningArrays[i].includes(8)){
-//           console.log("win");
+
+
+
+// function endOfGame(playerArray){
+//     for ( i=0; i<winningArrays.length; i++){ //works when hard coding the includes statement
+//         if (winningArrays[i].includes(playerArray[0]) && winningArrays[i].includes(playerArray[1]) && winningArrays[i].includes(playerArray[2])){
+          
+//         } else {
+//             break;
 //         }
 //     }
 // }
+
 
 
 
@@ -40,25 +47,28 @@ gridNumber.addEventListener('click', function(event){
     console.log(event.target.innerHTML);
     if (player1.isTurn === true){
         player1.placement.push(event.target.innerHTML);
-        console.log(player1.placement);
         player1.turnNumber++
         player1.isTurn = false;
         player2.isTurn = true;
-        if (player1.turnNumber = 3){
-            compareArrays(player1.placement)
-            console.log('end of game')
+
+        // temp code
+        i=0;
+        while ( i < player1.placement.length){ // Loops through as many items as in the player.placement array.
+            console.log(player1.placement);
+            i++
         }
+        //*********** */
         
     } else if (player2.isTurn === true) {
         player2.placement.push(event.target.innerHTML);
-        console.log(player2.placement);
         player2.turnNumber++
         player2.isTurn = false;
         player1.isTurn = true;
-        if (player2.turnNumber = 3){
-            compareArrays(player2.placement)
-            console.log('end of game')
 
+        i=0;
+        while ( i < player2.placement.length){ // Loops through as many items as in the player.placement array.
+            console.log(player2.placement);
+            i++
         }
     }
 })
