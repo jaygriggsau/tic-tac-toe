@@ -2,6 +2,8 @@ console.log("Checking Link");
 var gridNumber = document.querySelector('.gridbox');
 let winningArrays = [['0','1','2'],['3','4','5'],['6','7','8'],['0','4','8'],['2','4','6'],['1','4','7'],['0','3','6'],['2','5','8']];
 
+let boardState = []; // This will hold all board spots and will let me check if a space is ocupied, and if the board is full and check for a draw.
+
 let playerTurn = document.querySelector("#player-turn");
 let resetButton = document.querySelector('button');
 let gridItems = document.querySelectorAll(".griditem");
@@ -142,11 +144,10 @@ gridNumber.addEventListener('click', function(event){
         player1.turnNumber++;
         player1.isTurn = false;
         player2.isTurn = true;
-        playerTurn.textContent = "Player 1 Shot"
+        playerTurn.textContent = "Player 2 Shot"
         //changing background
         event.target.style.backgroundColor = "orangered";
-        //want to change the background on click
-
+        //check to see if won
         checkWinConditions(player1.name); 
         
     } else if (player2.isTurn === true) {
@@ -154,10 +155,10 @@ gridNumber.addEventListener('click', function(event){
         player2.turnNumber++;
         player2.isTurn = false;
         player1.isTurn = true;
-        playerTurn.textContent = "Player 2 Shot"
+        playerTurn.textContent = "Player 1 Shot"
         //changing Background
         event.target.style.backgroundColor = "blue";
-        
+        //check to see if won
         checkWinConditions(player2.name);
        
     }

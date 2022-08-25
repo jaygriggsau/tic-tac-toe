@@ -1,6 +1,7 @@
 body {
    width: 800px;
    margin: auto;
+   background-color: azure;
 }
 main {
     text-align: center;
@@ -47,9 +48,12 @@ h1 {
 }
 
 .bottom-stats{
-    display: inline-block;
-   
-    color: red;
+    display: flex;
+    justify-content: space-evenly;
+    color: rgb(194, 9, 250);
+    animation: colorFade 3s infinite;
+    font-family: 'DynaPuff', cursive;
+    font-size: 1.25rem;
 }
 .drawCross {
     background-image: url(./images/cross.png);
