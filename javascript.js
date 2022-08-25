@@ -128,7 +128,9 @@ function checkWinConditions(name){
 // ResetLogic
 function resetSoft(){
     for (i=0; i< gridItems.length; i++){
-        gridItems[i].style.backgroundColor = "antiquewhite"; //this may need to go in a loop
+        gridItems[i].style.backgroundColor = "antiquewhite";
+        gridItems[i].classList.remove("drawCross");
+        gridItems[i].classList.remove("drawCircle"); //this may need to go in a loop
     }
     player1.placement = [];
     player2.placement = [];
@@ -139,7 +141,9 @@ function resetSoft(){
 }
 function reset(){
     for (i=0; i< gridItems.length; i++){
-        gridItems[i].style.backgroundColor = "antiquewhite"; //this may need to go in a loop
+        gridItems[i].style.backgroundColor = "antiquewhite";
+        gridItems[i].classList.remove("drawCross");
+        gridItems[i].classList.remove("drawCircle");  //this may need to go in a loop
     }
     player1.score = 0;
     player2.score = 0;
@@ -171,6 +175,7 @@ gridNumber.addEventListener('click', function(event){
             playerTurn.textContent = "Player 2 Turn"
             //changing background
             event.target.style.backgroundColor = "orangered";
+            event.target.classList.add("drawCross");
             //check to see if won
             checkDraw()
             checkWinConditions(player1.name);  
@@ -189,6 +194,7 @@ gridNumber.addEventListener('click', function(event){
             playerTurn.textContent = "Player 1 Turn"
             //changing background
             event.target.style.backgroundColor = "skyblue";
+            event.target.classList.add("drawCircle");
             //check to see if won
             checkDraw()
             checkWinConditions(player2.name); 

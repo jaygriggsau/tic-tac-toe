@@ -53,8 +53,7 @@ body {
      color: rgb(194, 9, 250);
      animation: colorFade 3s infinite;
      font-family: 'DynaPuff', cursive;
-     font-size: 1.25rem;
-     margin: 0px;
+     font-size: 1.1rem;
  }
  
  .button-1 {
@@ -91,6 +90,14 @@ body {
    }
  
  .drawCross {
-     background-image: url(./images/cross.png);
-     background-size: scale;
+     background-image: url(./images/4879885_close_cross_delete_remove_icon.png);
+     background-size: 50%;
+     background-repeat: no-repeat;
+     background-position: center;
  }
+ .drawCircle {
+    background-image: url(./images/326565_blank_check_circle_icon.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
