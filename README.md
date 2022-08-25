@@ -6,6 +6,9 @@ A simple tic tac toe game that allows two players too play with each other and k
 ## :computer: [Click here](https://jaygriggsau.github.io/tic-tac-toe/) to see my live project!
 
 ## Algo
+
+//This changed along the way but this was my origignal statement//
+
 For our Tic-Tac-Toe JavaScript game, we'll only need three files. 
 
 In index.html, we'll assign classes to all the different parts of the game. In style.css, we'll take care of the game's styling. And in script.js, we'll write the actual code for the game.
@@ -56,3 +59,4 @@ Check for draw /use array to get board state/
 - There is code that could be wrapped in functions for ease of use.
 - Clean up CSS
 - Make responsive
+- Add draw score tracker
