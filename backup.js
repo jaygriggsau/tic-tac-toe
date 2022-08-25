@@ -2,7 +2,6 @@ let winningArrays = [['0','1','2'],['3','4','5'],['6','7','8'],['0','4','8'],['2
 
 let boardState = []; // This will hold all board spots and will let me check if a space is ocupied, and if the board is full and check for a draw.
 let wantedPlace = null;
-let isGameEnded = false;
 
 var gridNumber = document.querySelector('.gridbox');
 let playerTurn = document.querySelector("#player-turn");
@@ -34,20 +33,17 @@ function onWinPlayer1(){
     winMessage.textContent = player1.name + " Wins!"
     player1.score++
     playerOneScore.textContent = player1.score;
-    isGameEnded = true;
     
 }
 function onWinPlayer2(){
     winMessage.textContent = player2.name + " Wins!"
     player2.score++
     playerTwoScore.textContent = player2.score;
-    isGameEnded = true
     
 }
 function checkDraw(){
     if (boardState.length >= 9){
         winMessage.textContent = "It's a draw!"
-        isGameEnded = true
     }
 }
 
@@ -135,7 +131,6 @@ function resetSoft(){
     player1.turnNumber = 0;
     player2.turnNumber = 0;
     boardState=[];
-    isGameEnded = false;
 }
 function reset(){
     for (i=0; i< gridItems.length; i++){
@@ -151,15 +146,14 @@ function reset(){
     playerTwoScore.innerHTML = 0
     winMessage.textContent = ""; //Clear Message At Start
     boardState=[];
-    isGameEnded = false;
 }
 
 // Game Logic
 //Clicking and getting value and taking turns
 gridNumber.addEventListener('click', function(event){
-    if (player1.isTurn === true && isGameEnded === false && event.target.tagName === "SECTION"){
-            winMessage.textContent = ""; //Clear Message At Start
-            wantedPlace = event.target.innerHTML;
+    if (player1.isTurn === true){
+        winMessage.textContent = ""; //Clear Message At Start
+        wantedPlace = event.target.innerHTML;
         if (boardState.includes(wantedPlace)){
             console.log("cant got there")
         } else {
@@ -175,7 +169,7 @@ gridNumber.addEventListener('click', function(event){
             checkDraw()
             checkWinConditions(player1.name);  
         }    
-    } else if (player2.isTurn === true && isGameEnded === false && event.target.tagName === "SECTION") {
+    } else if (player2.isTurn === true) {
         winMessage.textContent = ""; //Clear Message At Start
         wantedPlace = event.target.innerHTML;
         if (boardState.includes(wantedPlace)){

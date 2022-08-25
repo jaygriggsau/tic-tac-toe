@@ -1,20 +1,20 @@
 body {
-    width: 800px;
+    width: 900px;
     margin: auto;
     background-color: azure;
  }
  main {
-     text-align: center;
+    text-align: center;
  }
  .gridbox{
      display: grid;
      grid-template-columns: 1fr 1fr 1fr;
-     margin: 25px 0px 25px 0px;
+     margin: 5px 0px 20px 0px;
      color: rgba(254, 254, 255, 0);
  }
  .griditem {
-     width: 90%;
-     height: 180px;
+     width: 85%;
+     height: 160px;
      border: 3px solid rgb(233, 21, 226);
      background-color: antiquewhite;
      border-radius: 25px;
@@ -22,6 +22,7 @@ body {
      margin: 10px;
      justify-content: center;
      align-items: center;
+     
  }
  h1 {
      color: #ca3edf;
@@ -53,6 +54,7 @@ body {
      animation: colorFade 3s infinite;
      font-family: 'DynaPuff', cursive;
      font-size: 1.25rem;
+     margin: 0px;
  }
  
  .button-1 {
@@ -80,6 +82,7 @@ body {
      user-select: none;
      -webkit-user-select: none;
      touch-action: manipulation;
+     
    }
    
    .button-1:hover,
@@ -89,4 +92,5 @@ body {
  
  .drawCross {
      background-image: url(./images/cross.png);
+     background-size: scale;
  }
