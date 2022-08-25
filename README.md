@@ -55,3 +55,4 @@ Check for draw /use array to get board state/
 - Clean up code base
 - There is code that could be wrapped in functions for ease of use.
 - Clean up CSS
+- Make responsive
