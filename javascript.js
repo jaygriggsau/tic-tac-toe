@@ -1,9 +1,9 @@
-console.log("Checking Link");
-var gridNumber = document.querySelector('.gridbox');
 let winningArrays = [['0','1','2'],['3','4','5'],['6','7','8'],['0','4','8'],['2','4','6'],['1','4','7'],['0','3','6'],['2','5','8']];
 
 let boardState = []; // This will hold all board spots and will let me check if a space is ocupied, and if the board is full and check for a draw.
+let wantedPlace = null;
 
+var gridNumber = document.querySelector('.gridbox');
 let playerTurn = document.querySelector("#player-turn");
 let resetButton = document.querySelector('button');
 let gridItems = document.querySelectorAll(".griditem");
@@ -40,6 +40,12 @@ function onWinPlayer2(){
     playerTwoScore.textContent = player2.score;
     resetSoft()
 }
+function checkDraw(){
+    if (boardState.length >= 9){
+        console.log("its a draw")
+    }
+}
+
 //// Winning Conditions Function
 function checkWinConditions(name){ 
     if (player1.placement.includes(winningArrays[0][0]) && player1.placement.includes(winningArrays[0][1]) && player1.placement.includes(winningArrays[0][2])){
@@ -119,10 +125,11 @@ function resetSoft(){
     for (i=0; i< gridItems.length; i++){
         gridItems[i].style.backgroundColor = "antiquewhite"; //this may need to go in a loop
     }
-    player1.placement = []
-    player2.placement = []
+    player1.placement = [];
+    player2.placement = [];
     player1.turnNumber = 0;
     player2.turnNumber = 0;
+    boardState=[];
 }
 function reset(){
     for (i=0; i< gridItems.length; i++){
@@ -134,35 +141,56 @@ function reset(){
     player2.placement = []
     player1.turnNumber = 0;
     player2.turnNumber = 0;
+    playerOneScore.innerHTML = 0
+    playerTwoScore.innerHTML = 0
+    winMessage.textContent = ""; //Clear Message At Start
+    boardState=[];
 }
 
 // Game Logic
 //Clicking and getting value and taking turns
 gridNumber.addEventListener('click', function(event){
     if (player1.isTurn === true){
-        player1.placement.push(event.target.innerHTML); // is pushing correctly
-        player1.turnNumber++;
-        player1.isTurn = false;
-        player2.isTurn = true;
-        playerTurn.textContent = "Player 2 Shot"
-        //changing background
-        event.target.style.backgroundColor = "orangered";
-        //check to see if won
-        checkWinConditions(player1.name); 
-        
+        winMessage.textContent = ""; //Clear Message At Start
+        wantedPlace = event.target.innerHTML;
+        if (boardState.includes(wantedPlace)){
+            console.log("cant got there")
+        } else {
+            boardState.push(event.target.innerHTML);//pushes to board state
+            player1.placement.push(event.target.innerHTML); // pushes to players moves
+            player1.turnNumber++;
+            player1.isTurn = false;
+            player2.isTurn = true;
+            playerTurn.textContent = "Player 2 Turn"
+            //changing background
+            event.target.style.backgroundColor = "orangered";
+            //check to see if won
+            checkDraw()
+            checkWinConditions(player1.name);  
+        }    
     } else if (player2.isTurn === true) {
-        player2.placement.push(event.target.innerHTML);
-        player2.turnNumber++;
-        player2.isTurn = false;
-        player1.isTurn = true;
-        playerTurn.textContent = "Player 1 Shot"
-        //changing Background
-        event.target.style.backgroundColor = "blue";
-        //check to see if won
-        checkWinConditions(player2.name);
+        winMessage.textContent = ""; //Clear Message At Start
+        wantedPlace = event.target.innerHTML;
+        if (boardState.includes(wantedPlace)){
+            console.log("cant got there")
+        } else {
+            boardState.push(event.target.innerHTML);//pushes to board state
+            player2.placement.push(event.target.innerHTML); // pushes to player moves array
+            player2.turnNumber++;
+            player2.isTurn = false;
+            player1.isTurn = true;
+            playerTurn.textContent = "Player 1 Turn"
+            //changing background
+            event.target.style.backgroundColor = "skyblue";
+            //check to see if won
+            checkDraw()
+            checkWinConditions(player2.name); 
+        }
+        
+        }
        
     }
-})
+)
 
 resetButton.addEventListener('click', function (event){
     reset();
