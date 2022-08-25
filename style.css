@@ -54,6 +54,7 @@ body {
      animation: colorFade 3s infinite;
      font-family: 'DynaPuff', cursive;
      font-size: 1.1rem;
+     align-items: center;
  }
  
  .button-1 {
@@ -65,7 +66,7 @@ body {
      cursor: pointer;
      display: inline-block;
      font-family: 'DynaPuff', cursive;
-     font-size: 14px;
+     font-size: 18px;
      font-weight: 500;
      height: 40px;
      line-height: 20px;
@@ -100,4 +101,7 @@ body {
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
+}
+#winning-message {
+    display: block;
 }

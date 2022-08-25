@@ -1,9 +1,7 @@
 ## Tic Tac Toe Game
 
-## :computer: link to see
-
 # Project Name
-The briefest description of my cool project and why you should all use it.
+A simple tic tac toe game that allows two players too play with each other and keeps score.
 
 ## :computer: [Click here](https://jaygriggsau.github.io/tic-tac-toe/) to see my live project!
 
@@ -29,34 +27,26 @@ if they lose it should say they lose
 
 if its a draw it should say its a draw.
 
-## :page_facing_up: About
-- How to use my awesome project.
-- Download instructions (if relevant):
-```zsh
-$ git clone my-awesome-app
-$ cd my-awesome-app
-$ node app.js
-```
-- Add in-app screenshots.
 
 ## :pencil2: Planning & Problem Solving
-- Talk about approach to the problem.
-- Add screenshots/drawings of doodles/plans during the planning phase.
-- Flow charts of app logic.
-![Wireframing](https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)
+- I found my original problem solving algo was no where detailed enough.
+- I had to use pen and paper to break down my problems bit by bit
+- Commenting each line helped me to sort out my game logic
+- I would write the problem down, then break it into smaller steps
+- Then it felt like a small win each time I completed it.
 
 ## :rocket: Cool tech
-- Libraries
-- Animations
-- Anything else you'd be proud to show your parents
+- HTML
+- CSS
+- Javascript
 
 ## :scream: Bugs to fix :poop:
-- Anything a little broken
-- Anything a LOT broken
-- Buttons to not click too many times (cause its broken :unamused:)
+- Nothing I can find.... yet
 
 ## :sob: Lessons learnt
-What I would do differently if I could wind back the clock...
+- I over complicated it to start with and started to write complicated functions.
+- Had to stop and follow Kasuns advice on keeping it simple and get the code workoing BEFORE building the functions.
 
 ## :white_check_mark: Future features
-Cool things I would add if I can keep working on this
+- Clean up code base
+- There is code that could be wrapped in functions for ease of use.
