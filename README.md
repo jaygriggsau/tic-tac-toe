@@ -27,6 +27,10 @@ if they lose it should say they lose
 
 if its a draw it should say its a draw.
 
+It needs to ony allow one click per grid space
+
+Check for draw /use array to get board state/
+
 
 ## :pencil2: Planning & Problem Solving
 - I found my original problem solving algo was no where detailed enough.
@@ -37,7 +41,7 @@ if its a draw it should say its a draw.
 
 ## :rocket: Cool tech
 - HTML
-- CSS
+- CSS -barely :smile:
 - Javascript
 
 ## :scream: Bugs to fix :poop:
@@ -50,3 +54,4 @@ if its a draw it should say its a draw.
 ## :white_check_mark: Future features
 - Clean up code base
 - There is code that could be wrapped in functions for ease of use.
+- Clean up CSS
