@@ -13,18 +13,34 @@
 </head>
 <body>
     <main>
-        <section id="player-turn"><h1>Player Ones Turn</h1></section>
+        <section id="top-display">
+            <h1 id="player-turn">Player Ones Turn</h1>
+            <h1 id="winning-message"></h1>
+        </section>
+    
+        <section class="gridbox">
+            <section class="griditem">0</section>
+            <section class="griditem">1</section>
+            <section class="griditem">2</section>
+            <section class="griditem">3</section>
+            <section class="griditem">4</section>
+            <section class="griditem">5</section>
+            <section class="griditem">6</section>
+            <section class="griditem">7</section>
+            <section class="griditem">8</section>
+        </section>
+        <section class="bottom-stats">
+            <section id="player1-stats">
+                <h2 class="score-display id="player-name">Player 1 Score</h2>
+                <h2 id="p1score">0</h2>
+            </section>
+            <section id="player2-stats">
+                <h2 class="score-display" id="player2-name">Player 2 Score</h2>
+                <h2 id="p2score">0</h2>
+            </section>
+            <button>Reset (clears Scores)</button>
+        </section>
+        
     </main>
-    <section class="gridbox">
-        <section class="griditem">0</section>
-        <section class="griditem">1</section>
-        <section class="griditem">2</section>
-        <section class="griditem">3</section>
-        <section class="griditem">4</section>
-        <section class="griditem">5</section>
-        <section class="griditem">6</section>
-        <section class="griditem">7</section>
-        <section class="griditem">8</section>
-    </section>
 </body>
 </html>

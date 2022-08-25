@@ -45,3 +45,12 @@ h1 {
     }
     
 }
+
+.bottom-stats{
+    display: inline-block;
+   
+    color: red;
+}
+.drawCross {
+    background-image: url(./images/cross.png);
+}

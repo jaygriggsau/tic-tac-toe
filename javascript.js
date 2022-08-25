@@ -2,6 +2,12 @@ console.log("Checking Link");
 var gridNumber = document.querySelector('.gridbox');
 let winningArrays = [['0','1','2'],['3','4','5'],['6','7','8'],['0','4','8'],['2','4','6'],['1','4','7'],['0','3','6'],['2','5','8']];
 
+let playerTurn = document.querySelector("#player-turn");
+let resetButton = document.querySelector('button');
+let gridItems = document.querySelectorAll(".griditem");
+let winMessage = document.querySelector('#winning-message');
+let playerOneScore = document.querySelector("#p1score");
+let playerTwoScore = document.querySelector("#p2score");
 
 let player1 = {
     name: "Player One",
@@ -18,74 +24,149 @@ let player2 = {
     placement : []
 }
 
+//On Win Function
 
-//// Winning Conditions //works when player1.placement is set before the addeventlistner
+function onWinPlayer1(){
+    winMessage.textContent = player1.name + " Wins!"
+    player1.score++
+    playerOneScore.textContent = player1.score;
+    resetSoft()
+}
+function onWinPlayer2(){
+    winMessage.textContent = player2.name + " Wins!"
+    player2.score++
+    playerTwoScore.textContent = player2.score;
+    resetSoft()
+}
+//// Winning Conditions Function
 function checkWinConditions(name){ 
-    if (player1.placement.includes(winningArrays[0][0] && winningArrays[0][1] && winningArrays[0][2])){
-        console.log("Well done " + name + "you win")
-    } else if (player1.placement.includes(winningArrays[1][0] && winningArrays[1][1] && winningArrays[1][2])){
-        console.log("Well done " + name + "you win")
-    } else if (player1.placement.includes(winningArrays[2][0] && winningArrays[2][1] && winningArrays[2][2])){
-        console.log("Well done " + name + "you win")
-    } else if (player1.placement.includes(winningArrays[3][0] && winningArrays[3][1] && winningArrays[3][2])){
-        console.log("Well done " + name + "you win")
-    } else if (player1.placement.includes(winningArrays[4][0] && winningArrays[4][1] && winningArrays[4][2])){
-        console.log("Well done " + name + "you win")
-    } else if (player1.placement.includes(winningArrays[5][0] && winningArrays[5][1] && winningArrays[5][2])){
-        console.log("Well done " + name + "you win")
-    } else if (player1.placement.includes(winningArrays[6][0] && winningArrays[6][1] && winningArrays[6][2])){
-        console.log("Well done " + name + "you win")
-    } else if (player1.placement.includes(winningArrays[7][0] && winningArrays[7][1] && winningArrays[7][2])){
-        console.log("Well done " + name + "you win") // LAst One
-    } else if (player1.placement.includes(winningArrays[0][0] && winningArrays[0][1] && winningArrays[0][2])){
-        console.log("Well done " + name + "you win")
-    } else if (player2.placement.includes(winningArrays[1][0] && winningArrays[1][1] && winningArrays[1][2])){
-        console.log("Well done " + name + "you win")
-    } else if (player2.placement.includes(winningArrays[2][0] && winningArrays[2][1] && winningArrays[2][2])){
-        console.log("Well done " + name + "you win")
-    } else if (player2.placement.includes(winningArrays[3][0] && winningArrays[3][1] && winningArrays[3][2])){
-        console.log("Well done " + name + "you win")
-    } else if (player2.placement.includes(winningArrays[4][0] && winningArrays[4][1] && winningArrays[4][2])){
-        console.log("Well done " + name + "you win")
-    } else if (player2.placement.includes(winningArrays[5][0] && winningArrays[5][1] && winningArrays[5][2])){
-        console.log("Well done " + name + "you win")
-    } else if (player2.placement.includes(winningArrays[6][0] && winningArrays[6][1] && winningArrays[6][2])){
-        console.log("Well done " + name + "you win")
-    } else if (player2.placement.includes(winningArrays[7][0] && winningArrays[7][1] && winningArrays[7][2])){
-        console.log("Well done " + name + "you win")
-    } else {
-        console.log("Not Yet " + name)
-    }
-
+    if (player1.placement.includes(winningArrays[0][0]) && player1.placement.includes(winningArrays[0][1]) && player1.placement.includes(winningArrays[0][2])){
+        console.log("Well done " + name + " you win")
+        onWinPlayer1();
+    } 
+    else if (player1.placement.includes(winningArrays[1][0]) && player1.placement.includes(winningArrays[1][1]) && player1.placement.includes(winningArrays[1][2])){
+        console.log("Well done " + name + " you win")
+        onWinPlayer1();
+    } 
+    else if (player1.placement.includes(winningArrays[2][0]) && player1.placement.includes(winningArrays[2][1]) && player1.placement.includes(winningArrays[2][2])){
+        console.log("Well done " + name + " you win")
+        onWinPlayer1();
+    } 
+    else if (player1.placement.includes(winningArrays[3][0]) && player1.placement.includes(winningArrays[3][1]) && player1.placement.includes(winningArrays[3][2])){
+        console.log("Well done " + name + " you win")
+        onWinPlayer1();
+    } 
+    else if (player1.placement.includes(winningArrays[4][0]) && player1.placement.includes(winningArrays[4][1]) && player1.placement.includes(winningArrays[4][2])){
+        console.log("Well done " + name + " you win")
+        onWinPlayer1();
+    } 
+    else if (player1.placement.includes(winningArrays[4][0]) && player1.placement.includes(winningArrays[4][1]) && player1.placement.includes(winningArrays[4][2])){
+        console.log("Well done " + name + " you win")
+    } 
+    else if (player1.placement.includes(winningArrays[4][0]) && player1.placement.includes(winningArrays[4][1]) && player1.placement.includes(winningArrays[4][2])){
+        console.log("Well done " + name + " you win")
+    } 
+    else if (player1.placement.includes(winningArrays[5][0]) && player1.placement.includes(winningArrays[5][1]) && player1.placement.includes(winningArrays[5][2])){
+        console.log("Well done " + name + " you win")
+        onWinPlayer1();
+    } 
+    else if (player1.placement.includes(winningArrays[6][0]) && player1.placement.includes(winningArrays[6][1]) && player1.placement.includes(winningArrays[6][2])){
+        console.log("Well done " + name + " you win")
+        onWinPlayer1();
+    } 
+    else if (player1.placement.includes(winningArrays[7][0]) && player1.placement.includes(winningArrays[7][1]) && player1.placement.includes(winningArrays[7][2])){
+        console.log("Well done " + name + " you win")
+        onWinPlayer1();
+    } 
+    else if (player2.placement.includes(winningArrays[0][0]) && player2.placement.includes(winningArrays[0][1]) && player2.placement.includes(winningArrays[0][2])){
+        console.log("Well done " + name + " you win")
+        onWinPlayer2();
+    } 
+    else if (player2.placement.includes(winningArrays[1][0]) && player2.placement.includes(winningArrays[1][1]) && player2.placement.includes(winningArrays[1][2])){
+        console.log("Well done " + name + " you win")
+        onWinPlayer2();
+    } 
+    else if (player2.placement.includes(winningArrays[2][0]) && player2.placement.includes(winningArrays[2][1]) && player2.placement.includes(winningArrays[2][2])){
+        console.log("Well done " + name + " you win")
+        onWinPlayer2();
+    } 
+    else if (player2.placement.includes(winningArrays[3][0]) && player2.placement.includes(winningArrays[3][1]) && player2.placement.includes(winningArrays[3][2])){
+        console.log("Well done " + name + " you win")
+        onWinPlayer2();
+    } 
+    else if (player2.placement.includes(winningArrays[4][0]) && player2.placement.includes(winningArrays[4][1]) && player2.placement.includes(winningArrays[4][2])){
+        console.log("Well done " + name + " you win")
+        onWinPlayer2();
+    } 
+    else if (player2.placement.includes(winningArrays[5][0]) && player2.placement.includes(winningArrays[5][1]) && player2.placement.includes(winningArrays[5][2])){
+        console.log("Well done " + name + " you win")
+        onWinPlayer2();
+    } 
+    else if (player2.placement.includes(winningArrays[6][0]) && player2.placement.includes(winningArrays[6][1]) && player2.placement.includes(winningArrays[6][2])){
+        console.log("Well done " + name + " you win")
+        onWinPlayer2();
+    } 
+    else if (player2.placement.includes(winningArrays[7][0]) && player2.placement.includes(winningArrays[7][1]) && player2.placement.includes(winningArrays[7][2])){
+        console.log("Well done " + name + " you win")
+        onWinPlayer2();
+    } 
 }
 
+// ResetLogic
+function resetSoft(){
+    for (i=0; i< gridItems.length; i++){
+        gridItems[i].style.backgroundColor = "antiquewhite"; //this may need to go in a loop
+    }
+    player1.placement = []
+    player2.placement = []
+    player1.turnNumber = 0;
+    player2.turnNumber = 0;
+}
+function reset(){
+    for (i=0; i< gridItems.length; i++){
+        gridItems[i].style.backgroundColor = "antiquewhite"; //this may need to go in a loop
+    }
+    player1.score = 0;
+    player2.score = 0;
+    player1.placement = []
+    player2.placement = []
+    player1.turnNumber = 0;
+    player2.turnNumber = 0;
+}
 
 // Game Logic
 //Clicking and getting value and taking turns
 gridNumber.addEventListener('click', function(event){
     if (player1.isTurn === true){
         player1.placement.push(event.target.innerHTML); // is pushing correctly
-        player1.turnNumber++
+        player1.turnNumber++;
         player1.isTurn = false;
         player2.isTurn = true;
-        //adding a drawing
+        playerTurn.textContent = "Player 1 Shot"
+        //changing background
         event.target.style.backgroundColor = "orangered";
         //want to change the background on click
 
-        checkWinConditions(player1.name); // Throwing error, 
+        checkWinConditions(player1.name); 
         
     } else if (player2.isTurn === true) {
         player2.placement.push(event.target.innerHTML);
-        player2.turnNumber++
+        player2.turnNumber++;
         player2.isTurn = false;
         player1.isTurn = true;
-        checkWinConditions(player2.name);
+        playerTurn.textContent = "Player 2 Shot"
         //changing Background
         event.target.style.backgroundColor = "blue";
-
         
+        checkWinConditions(player2.name);
+       
     }
 })
+
+resetButton.addEventListener('click', function (event){
+    reset();
+})
+
 
 
 
